@@ -1,0 +1,245 @@
+/*
+Theme Name:   Tema Alarona Studio
+Theme URI:    http://alaronastudio.com/
+Description:  Tema creado para Alarona Studio
+Author:       Equipo Alarona 
+Author URI:   http://alaronastudio.com/
+Template:     generatepress
+Version:      1.0.0
+*/
+
+:root {
+  --main-color: #2DF2FF;
+  --color-1: #FAFAFA;
+  --color-2: #1D2123;
+}
+
+/* COLOR */
+.main-color,
+.main-color a {
+  color: var(--main-color);
+}
+
+.color-1,
+.color-1 a {
+  color: var(--color-1);
+}
+
+.color-2,
+.color-1 a {
+  color: var(--color-2);
+}
+
+.main-bk {
+  background-color: var(--main-color);
+}
+
+.bk-1 {
+  background-color: var(--color-1);
+}
+
+.bk-2 {
+  background-color: var(--color-2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Borna';
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.container-small {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.container-medium {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.container-large {
+  max-width: 1720px;
+  margin: auto;
+}
+
+/* HEADER */
+header {
+  padding: 20px 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 100%);
+  backdrop-filter: blur(5px);
+}
+
+header .row {
+  display: flex;
+  align-items: center;
+}
+
+header .row .col-b {
+  width: 60%;
+}
+
+header .row .col-a,
+header .row .col-c {
+  width: 20%;  
+}
+
+header .row .col-c {
+  display: flex;
+  justify-content: end;
+  z-index: 9;
+  transition: 0.2s ease all;
+}
+
+#menu-menu-principal {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 954px;
+  margin: auto;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.40);
+}
+
+#menu-menu-principal li {
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+#menu-menu-principal li a {
+  color: var(--color-1);
+  transition: .2s ease-in-out;
+  padding: 8px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+#menu-menu-principal li:not(.current-menu-item) a {
+  padding-left: 35px;
+}
+
+#menu-menu-principal li.current-menu-item a {
+  padding-left: 50px;
+  color: var(--main-color);
+}
+
+#menu-menu-principal li.current-menu-item a,
+#menu-menu-principal li a:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  transition: .2s;
+}
+
+#menu-menu-principal li.current-menu-item a:before,
+#menu-menu-principal li a:before {
+  content: '';
+  height: 8px;
+  width: 8px !important;
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  border-radius: 50px;
+}
+
+#menu-menu-principal li.current-menu-item a:before {
+  background: var(--main-color);
+}
+
+#menu-menu-principal li:not(.current-menu-item) a:before {
+  background: transparent;
+  transition: height 0.5s ease, width 0.5s ease, top 0.5s ease, left 0.5s ease, background 0.5s ease;
+}
+
+#menu-menu-principal li:not(.current-menu-item) a:hover:before {
+  background: var(--color-2);
+  top: calc(50% - 50px);
+  left: calc(50% - 75px);
+  height: 100px;
+  width: 150px !important;
+  z-index: -1;
+}
+
+/* Lightbox Lang*/
+header .row .lightBox:after {
+  content: '';
+  background: #00000040;
+  height: 100dvh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Menú Lang */
+.menu-lang svg {
+  transition: transform 0.2s ease;
+}
+.lightBox .menu-lang svg {
+  transform: rotate(180deg);
+}
+.menu-lang {
+  list-style: none;  
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item-lang {
+  position: relative;  
+}
+
+.submenu-lang {
+  display: none;  
+  position: absolute;    
+}
+
+.menu-item-lang ul.submenu-lang.submenu--active {
+  display: block;
+  margin: 0;
+  background: #f3f4f633;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 0 0 10px 10px;
+}
+.col-c.lightBox .menu-item-lang {
+  background: #f3f4f633;
+  border-radius: 8px 8px 0 0;
+  padding-top: 3px;
+}
+.col-c.lightBox .menu-item-lang > a {
+  background: #363636;
+  margin: 0 3px;
+}
+.col-c:not(.lightBox) .menu-item-lang > a {
+  &:hover {
+    background:#f3f4f633;
+  }
+}
+/* .col-c.lightBox .menu-item-lang > a {
+  background: #f3f4f633;
+  border-radius: 8px 8px 0 0;
+} */
+
+.menu-item-lang > a {
+  transition: .2s ease;
+  background: transparent;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--color-1);
+  display: flex;
+  gap: 10px;
+}
+.menu-item-lang ul.submenu-lang.submenu--active li {
+  list-style: none;
+}
