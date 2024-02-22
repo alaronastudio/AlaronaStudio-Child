@@ -140,20 +140,33 @@ header .row .col-c {
 }
 
 #menu-menu-principal li.current-menu-item a:before,
-#menu-menu-principal li a:before {
+#menu-menu-principal li a:before,
+.submenu-lang li.current-language a:before {
   content: '';
   height: 8px;
   width: 8px !important;
   position: absolute;
-  top: 16px;
-  left: 30px;
   border-radius: 50px;
 }
-
-#menu-menu-principal li.current-menu-item a:before {
-  background: var(--main-color);
+#menu-menu-principal li.current-menu-item a:before,
+#menu-menu-principal li a:before {
+  top: 16px;
+  left: 30px;
+}
+.submenu-lang li.current-language a:before {  
+  top: 19px;
+  left: 22px;   
 }
 
+#menu-menu-principal li.current-menu-item a:before,
+.submenu-lang li.current-language a:before {
+  background: var(--main-color);
+}
+.submenu-lang li.current-language a {
+  position: relative;
+  padding-left: 40px;
+  color: var(--main-color);
+}
 #menu-menu-principal li:not(.current-menu-item) a:before {
   background: transparent;
   transition: height 0.5s ease, width 0.5s ease, top 0.5s ease, left 0.5s ease, background 0.5s ease;
@@ -205,13 +218,12 @@ header .row .lightBox:after {
 .menu-item-lang ul.submenu-lang.submenu--active {
   display: block;
   margin: 0;
-  background: #f3f4f633;
-  width: 100%;
-  padding: 10px 20px;
+  background: #7a7a7acc;
+  width: 100%;  
   border-radius: 0 0 10px 10px;
 }
 .col-c.lightBox .menu-item-lang {
-  background: #f3f4f633;
+  background: #7a7a7acc;
   border-radius: 8px 8px 0 0;
   padding-top: 3px;
 }
@@ -219,27 +231,44 @@ header .row .lightBox:after {
   background: #363636;
   margin: 0 3px;
 }
+.col-c .menu-item-lang {
+  padding-top: 3px;
+}
 .col-c:not(.lightBox) .menu-item-lang > a {
+  margin: 0 3px;
   &:hover {
     background:#f3f4f633;
   }
 }
-/* .col-c.lightBox .menu-item-lang > a {
-  background: #f3f4f633;
-  border-radius: 8px 8px 0 0;
-} */
 
-.menu-item-lang > a {
+.menu-item-lang > a, .menu-item-lang > ul li a {
   transition: .2s ease;
   background: transparent;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-size: 18px;
-  line-height: 27px;
+  border-radius: 8px;  
   color: var(--color-1);
   display: flex;
   gap: 10px;
 }
+.menu-item-lang > a {
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
+.menu-item-lang > ul li a {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
 .menu-item-lang ul.submenu-lang.submenu--active li {
   list-style: none;
+}
+.menu-item-lang > ul li a {
+  margin: 3px;
+  transition: .3s ease;
+}
+
+.menu-item-lang > ul li a:hover {
+  background: #f3f4f633;
 }
