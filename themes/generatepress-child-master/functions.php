@@ -24,5 +24,22 @@ function child_enqueue_styles() {
 
 // Incluir recursos php
 
-include get_template_part('template-parts/custom', 'functions');
-include get_template_part('template-parts/custom', 'resources');
+$template_part = 'template-parts/custom-functions.php';
+
+// Buscar y cargar el archivo
+if (locate_template($template_part)) {
+    include locate_template($template_part);
+} else {
+    // Manejar el caso en el que el archivo no se encuentra
+    echo 'El archivo de template-parts no se encontró.';
+}
+
+$template_part_resources = 'template-parts/custom-resources.php';
+
+// Buscar y cargar el archivo
+if (locate_template($template_part_resources)) {
+    include locate_template($template_part_resources);
+} else {
+    // Manejar el caso en el que el archivo no se encuentra
+    echo 'El archivo de template-parts no se encontró.';
+}
